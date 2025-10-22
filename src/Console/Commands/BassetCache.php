@@ -82,7 +82,7 @@ class BassetCache extends Command
                             ->toArray()
                     );
 
-                return collect($matches[1])->map(fn (string $type, int $i) => [$type, $matches[2][$i]]);
+                return collect($matches[1])->map(fn (string $type, int $i) => [ltrim($type, '@'), $matches[2][$i]]);
             });
 
         $totalBassets = count($bassets);
